@@ -9,6 +9,7 @@ body {
   color: #333;
 }
 
+/* Navbar Styling */
 .navbar {
   background-color: #333;
   color: #fff;
@@ -16,6 +17,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1em;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .navbar-brand {
@@ -24,8 +26,8 @@ body {
 }
 
 .navbar-logo {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 
@@ -40,10 +42,11 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap; /* Wraps items on smaller screens */
 }
 
 .navbar-menu li {
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
 .navbar-menu a {
@@ -55,12 +58,13 @@ body {
   color: #ccc;
 }
 
+/* Hero Section */
 .hero {
   background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=1500&q=80') no-repeat center center/cover;
   background-size: cover;
   color: white;
   text-align: center;
-  padding: 100px 0;
+  padding: 80px 20px; /* Reduced padding for smaller screens */
 }
 
 .hero .hero-content {
@@ -72,12 +76,12 @@ body {
 
 .hero-title {
   color: #fff;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #fff;
 }
 
@@ -94,6 +98,7 @@ body {
   background-color: #c13b1a;
 }
 
+/* Services Section */
 .services {
   display: flex;
   flex-wrap: wrap;
@@ -108,7 +113,8 @@ body {
   margin: 20px;
   padding: 20px;
   text-align: center;
-  width: 300px;  /* Increased width for better layout */
+  width: 100%; /* Default width for small screens */
+  max-width: 300px; /* Limits width on larger screens */
 }
 
 .service img {
@@ -127,6 +133,7 @@ body {
   color: #666;
 }
 
+/* Footer */
 footer {
   background-color: #333;
   color: #fff;
@@ -136,6 +143,7 @@ footer {
   width: 100%;
 }
 
+/* Contact Page */
 .contact-page {
   padding: 50px 20px;
   display: flex;
@@ -178,4 +186,58 @@ footer {
 
 .contact-form button:hover {
   background-color: #c13b1a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-menu li {
+    margin: 10px 0;
+  }
+
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .service {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .contact-page,
+  .contact-form {
+    padding: 20px;
+  }
 }
